@@ -59,4 +59,6 @@ set visualbell
 
 syntax on
 
+runtime statusline.vim
+
 runtime local.vim
