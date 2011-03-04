@@ -7,3 +7,5 @@ call pathogen#runtime_append_all_bundles()
 " --------
 filetype on
 filetype plugin indent on
+
+runtime local.vim

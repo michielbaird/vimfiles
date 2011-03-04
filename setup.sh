@@ -34,7 +34,16 @@ if [ -e ~/.vimrc ]; then
     fi
 fi
 
+if [ -e ~/.gvimrc ]; then
+    if [ ! -L ~/.gvimrc ]; then
+        echo "You have a ~/.gvimrc that isn't a symlink.  It will not be deleted.  Please take care of it."
+        exit 1
+    fi
+fi
+
 rm -f ~/.vim
 rm -f ~/.vimrc
+rm -f ~/.gvimrc
 ln -s ${mydir} ~/.vim
 ln -s ${mydir}/vimrc ~/.vimrc
+ln -s ${mydir}/gvimrc ~/.gvimrc
