@@ -1,8 +1,23 @@
 #!/bin/sh
 
+set -e
+set -u
+
 mydir=`dirname $0`
 cd ${mydir}
 mydir=`pwd`
+
+if [ ! -e pathogen ]; then
+    echo "You do not have the git submodules.  Will try do it for you..."
+    failed=0
+    git submodule update --init || failed=1
+    if [ $failed -eq 1 ]; then
+	echo "Could not update the modules for you.  You will need to do it yourself."
+	echo ""
+	echo "    git submodule update --init"
+	exit 1
+    fi
+fi
 
 if [ -e ~/.vim ]; then
     if [ ! -L ~/.vim ]; then
