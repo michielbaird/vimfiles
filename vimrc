@@ -2,6 +2,7 @@ set nocompatible
 
 filetype off
 call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
 
 " From http://items.sjbach.com/319/configuring-vim-right
 set hidden
@@ -55,11 +56,6 @@ set shortmess=atI
 
 " Don't make a noise when mistakes happen
 set visualbell
-
-" Filetype
-" --------
-filetype on
-filetype plugin indent on
 
 syntax on
 
