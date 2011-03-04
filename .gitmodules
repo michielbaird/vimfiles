@@ -10,6 +10,3 @@
 [submodule "bundle/plugin-nerdtree"]
 	path = bundle/plugin-nerdtree
 	url = http://github.com/scrooloose/nerdtree.git
-[submodule "plugin-command-t"]
-	path = plugin-command-t
-	url = https://github.com/akitaonrails/Command-T.git
