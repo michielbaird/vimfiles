@@ -41,6 +41,8 @@ set statusline+=%=      "left/right separator
 
 "set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
 
+set statusline+=%{fugitive#statusline()}\  
+
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
