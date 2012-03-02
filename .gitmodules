@@ -19,3 +19,6 @@
 [submodule "bundle/html5.vim"]
 	path = bundle/html5.vim
 	url = http://github.com/othree/html5.vim.git
+[submodule "bundle/vim-trailing-whitespace"]
+	path = bundle/vim-trailing-whitespace
+	url = http://github.com/bronson/vim-trailing-whitespace.git
