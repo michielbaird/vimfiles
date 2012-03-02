@@ -28,9 +28,10 @@ set ignorecase
 " ... unless a case is used in the search (scs)
 set smartcase
 
-" show whitespace characters (lcs)
+" Show whitespace characters (lcs)
 set listchars=tab:>-,trail:·,eol:$
-" toggle showing whitespace characters
+
+" Key to toggle showing whitespace characters
 nmap <silent> <leader>s :set nolist!<CR>
 
 " Set terminal title if not using gvim
@@ -43,16 +44,24 @@ set scrolloff=5
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
+" Scroll the viewport faster
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
 " Show row/column details in status line (ru)
 set ruler
 
 " Make backspace behave well (bs)
 set backspace=indent,eol,start
 
+" Key to toggle search highlighting
+nmap <silent> <leader>n :silent :set hlsearch!<CR>
+
 " Highlight search terms (hls)
 set hlsearch
+
 " Move dynamically to search terms as they are typed (is)
-set incsearch 
+set incsearch
 
 " Try to avoid all hit-enter prompts (shm)
 set shortmess=atI
@@ -66,6 +75,9 @@ set noerrorbells
 
 " Syntax highlighting
 syntax on
+
+" Key to toggle line numbers
+nmap <silent> <leader># :silent :set number!<CR>
 
 " Ignore patterns for globs (wig)
 set wildignore=*.o,*.lo,*.la,#*#,.*.rej,*.rej,.*~,*~,.#*,*.class,*.pyc
