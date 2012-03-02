@@ -61,7 +61,8 @@ set shortmess=atI
 set visualbell
 
 " Turn of bell entirely
-set vb t_vb=
+set t_vb=
+set noerrorbells
 
 " Syntax highlighting
 syntax on
@@ -80,6 +81,6 @@ set showmode
 
 runtime statusline.vim
 
-runtime onload.vim
+runtime autocommand.vim
 
 runtime local.vim
