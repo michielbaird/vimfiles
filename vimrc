@@ -8,7 +8,7 @@ filetype plugin indent on
 
 " From http://items.sjbach.com/319/configuring-vim-right
 
-" Allow vim to manage multiple buffers effectively (hid)
+" Hide buffers when not displayed - better for buffer management (hid)
 set hidden
 
 " Preferred keys
@@ -23,6 +23,9 @@ set history=1000
 " Provide better options on tab of commands (wmnu, wim)
 set wildmenu
 set wildmode=list:longest
+
+" Ignore patterns for globs (wig)
+set wildignore=*.o,*.lo,*.la,#*#,.*.rej,*.rej,.*~,*~,.#*,*.class,*.pyc
 
 " Ignore case for search ... (ic)
 set ignorecase
@@ -40,6 +43,8 @@ set title
 
 " Maintain 5 lines of context around current line (so)
 set scrolloff=5
+set sidescrolloff=7
+set sidescroll=1
 
 " Use a local temporary directory (bdir)
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -79,9 +84,6 @@ syntax on
 
 " Key to toggle line numbers
 nmap <silent> <leader># :silent :set number!<CR>
-
-" Ignore patterns for globs (wig)
-set wildignore=*.o,*.lo,*.la,#*#,.*.rej,*.rej,.*~,*~,.#*,*.class,*.pyc
 
 " Show last command (sc)
 set showcmd
