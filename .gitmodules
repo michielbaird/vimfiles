@@ -13,3 +13,6 @@
 [submodule "bundle/plugin-command-t"]
 	path = bundle/plugin-command-t
 	url = https://github.com/akitaonrails/Command-T.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = http://github.com/kchmck/vim-coffee-script.git
