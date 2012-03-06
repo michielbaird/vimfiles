@@ -25,8 +25,11 @@ set statusline+=%*
 " Left/right separator
 set statusline+=%=
 
+" Syntax error status from Syntastic
+set statusline+=%{SyntasticStatuslineFlag()}\ 
+
 " Git status from fugitive
-set statusline+=%{fugitive#statusline()}\  
+set statusline+=%{fugitive#statusline()}\ 
 
 " Show cursor column
 set statusline+=%c,
