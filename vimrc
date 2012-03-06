@@ -11,12 +11,6 @@ filetype plugin indent on
 " Hide buffers when not displayed - better for buffer management (hid)
 set hidden
 
-" Preferred keys
-nnoremap ' `
-nnoremap ` '
-nmap ; :
-let mapleader = ","
-
 " Remember more (hi)
 set history=1000
 
@@ -35,9 +29,6 @@ set smartcase
 " Show whitespace characters (lcs)
 set listchars=tab:>-,trail:·,eol:$
 
-" Key to toggle showing whitespace characters
-nmap <silent> <leader>s :set nolist!<CR>
-
 " Set terminal title if not using gvim
 set title
 
@@ -50,18 +41,11 @@ set sidescroll=1
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-" Scroll the viewport faster
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
-
 " Show row/column details in status line (ru)
 set ruler
 
 " Make backspace behave well (bs)
 set backspace=indent,eol,start
-
-" Key to toggle search highlighting
-nmap <silent> <leader>n :silent :set hlsearch!<CR>
 
 " Highlight search terms (hls)
 set hlsearch
@@ -82,9 +66,6 @@ set noerrorbells
 " Syntax highlighting
 syntax on
 
-" Key to toggle line numbers
-nmap <silent> <leader># :silent :set number!<CR>
-
 " Show last command (sc)
 set showcmd
 
@@ -93,6 +74,22 @@ set showmatch
 
 " Show me when mode is insert, replace or visual (smd)
 set showmode
+
+" Don't format on paste (like paste on) (fo)
+set formatoptions=1
+
+" Fold based on indent
+set foldmethod=indent
+
+" Deepest fold is 3 level
+set foldnestmax=3
+
+" Don't fold by default
+set nofoldenable
+
+" Include other files
+
+runtime mappings.vim
 
 runtime statusline.vim
 
