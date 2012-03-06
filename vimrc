@@ -87,12 +87,17 @@ set foldnestmax=3
 " Don't fold by default
 set nofoldenable
 
-" Include other files
-
+" Map keys
 runtime mappings.vim
 
+" Define status line
 runtime statusline.vim
 
+" Autocmds on load
 runtime autocommand.vim
 
+" Configure plugins
+runtime plugins.vim
+
+" Local overrides
 runtime local.vim
