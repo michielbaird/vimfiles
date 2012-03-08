@@ -44,7 +44,3 @@ autocmd BufWritePost,FileWritePost *.coffee :silent !coffee -c <afile>
 
 " Compile LessCSS on save (fails silently if lessc not found)
 autocmd BufWritePost,FileWritePost *.less :silent !lessc <afile> <afile>:r.css
-
-" Start NERDTree for vim with no args
-autocmd vimenter * if !argc() | NERDTree | endif
-

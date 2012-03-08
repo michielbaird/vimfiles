@@ -1,4 +1,5 @@
 .netrwhist
 local.vim
 glocal.vim
+session.vim
 yankring_history_v2.txt

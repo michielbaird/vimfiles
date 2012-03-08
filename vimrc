@@ -59,7 +59,7 @@ set shortmess=atI
 " Don't make a noise when mistakes happen (vb)
 set visualbell
 
-" Turn of bell entirely
+" Turn of bell entirely (noeb)
 set t_vb=
 set noerrorbells
 
@@ -78,14 +78,17 @@ set showmode
 " Don't format on paste (like paste on) (fo)
 set formatoptions=1
 
-" Fold based on indent
+" Fold based on indent (fdm)
 set foldmethod=indent
 
-" Deepest fold is 3 level
+" Deepest fold is 3 level (fdn)
 set foldnestmax=3
 
-" Don't fold by default
+" Don't fold by default (nofen)
 set nofoldenable
+
+"Expand tabs to spaces (et)
+set expandtab
 
 " Map keys
 runtime mappings.vim
