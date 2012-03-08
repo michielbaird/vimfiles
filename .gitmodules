@@ -49,3 +49,6 @@
 [submodule "bundle/pydoc.vim"]
 	path = bundle/pydoc.vim
 	url = http://github.com/fs111/pydoc.vim.git
+[submodule "bundle/vim-jade"]
+	path = bundle/vim-jade
+	url = http://github.com/digitaltoad/vim-jade.git
