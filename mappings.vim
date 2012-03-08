@@ -5,10 +5,10 @@ vmap ; :
 " Use comma as <leader> key
 let mapleader = ","
 
-"Fix visual paste to not overwrite default register with deleted text
+" Fix visual paste to not overwrite default register with deleted text
 vnoremap p "_dP
 
-"Map single-char deletes to null register instead of overwriting last yank
+" Map single-char deletes to null register instead of overwriting last yank
 noremap x "_x
 
 " Map Q to format selection instead of ex-mode
@@ -37,34 +37,46 @@ nnoremap <C-y> 3<C-y>
 " Key for NERDTree
 silent! nmap <silent> <Leader>d :NERDTreeToggle<CR>
 
-" Make <c-l> to clear the highlight as well as redraw
-nnoremap <C-L> :noh<CR><C-L>
+" Make C-L in insert mode clear the highlight as well as redraw
 inoremap <C-L> <C-O>:noh<CR>
 
-" Map ,b to start bufexplorer
-nnoremap <leader>b :BufExplorer<cr>
+" Make \ in normal mode clear highlight
+nnoremap \ :noh<CR>
 
-" Map ,t to do CommandT TextMate-style finder
+" Map key to start bufexplorer
+nnoremap <leader>e :BufExplorer<cr>
+
+" Map key to do CommandT TextMate-style finder
 nnoremap <leader>t :CommandT<CR>
 
-" Map F4 to use Gundo
+" Map key to do CommandT buffer finder
+nnoremap <leader>b :CommandTBuffer<CR>
+
+" Map key to use Gundo
 nnoremap <F4> :GundoToggle<CR>
 
-" Key mapping for window navigation
+" Map keys for quick window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Key mapping for saving file
+" Map key for quick save
 nmap <C-s> :w<CR>
 
-" Key mapping for tab navigation
+" Map key to change tabs
 nmap <Tab> gt
 nmap <S-Tab> gT
 
-" Map meta-[] to quick indent like textmate
+" Map keys to quick indent like textmate
 nmap <M-[> <<
 nmap <M-]> >>
 vmap <M-[> <gv
 vmap <M-]> >gv
+
+" Map key for Session Save
+nmap SS <ESC>:mksession! ~/.vim/session.vim<CR>
+" Map key for Session Save & Quit
+nmap SQ <ESC>:mksession! ~/.vim/session.vim<CR>:wqa<CR>
+" Map key for Session Restore
+nmap SR <ESC>:source ~/.vim/session.vim<CR>
