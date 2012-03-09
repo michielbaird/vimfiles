@@ -40,8 +40,10 @@ autocmd BufRead *.coffee set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 autocmd BufRead *.markdown set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 " Compile CoffeeScript on save (fails silently if coffee not found)
-"autocmd BufWritePost,FileWritePost *.coffee :silent !coffee -c <afile>
-autocmd BufWritePost,FileWritePost *.coffee :silent !iced -I window -c <afile>
+autocmd BufWritePost,FileWritePost *.coffee :silent !coffee -c <afile>
+
+" Compile IcedCoffeeScript on save, places runtime on window object
+autocmd BufWritePost,FileWritePost *.iced :silent !iced -I window -c <afile>
 
 " Compile LessCSS on save (fails silently if lessc not found)
 autocmd BufWritePost,FileWritePost *.less :silent !lessc <afile> <afile>:r.css

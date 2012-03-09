@@ -67,11 +67,10 @@ map <M-Down> <C-w>j
 map <M-Up> <C-w>k
 map <M-Right> <C-w>l
 
-" Map key for quick save (only works in gvim)
+" Map key for quick save from each mode (gvim-only)
 nmap <C-s> :w<CR>
-
-" Map key to leave insert mode and save
 imap <C-s> <ESC>:w<CR>
+vmap <C-s> <ESC>:w<CR>
 
 " Map key to change tabs
 nmap <Tab> gt

@@ -10,7 +10,8 @@ let g:alternateExtensions_css = "less"
 
 " Set .js as compiled form of .coffee
 let g:alternateExtensions_coffee = "js"
-let g:alternateExtensions_js = "coffee"
+let g:alternateExtensions_iced = "js"
+let g:alternateExtensions_js = "coffee,iced"
 
 " ack.vim: Define command
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
