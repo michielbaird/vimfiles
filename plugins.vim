@@ -24,3 +24,6 @@ let NERDTreeIgnore=['\.swp$']
 " Single-space indent in zencoding
 let g:user_zen_settings = { 'indentation' : ' ' }
 
+" Use c-k for zencoding to avoid clobbering c-y scrolling
+let g:user_zen_leader_key = '<c-k>'
+

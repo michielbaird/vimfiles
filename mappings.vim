@@ -30,21 +30,21 @@ nmap <silent> <leader>s :set nolist!<CR>
 " Map key to toggle line numbers
 nmap <silent> <leader># :silent :set number!<CR>
 
-" Map keys to scroll the viewport faster
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
+" Map keys to scroll viewport and take cursor with it
+nnoremap <C-e> 3<C-e>3j
+nnoremap <C-y> 3<C-y>3k
 
-" Key for NERDTree
-silent! nmap <silent> <Leader>d :NERDTreeToggle<CR>
+" Make insert-mode key to clear highlight and redraw
+inoremap <C-l> <C-o>:noh<CR><C-o>:redraw<CR>
 
-" Make C-L in insert mode clear the highlight as well as redraw
-inoremap <C-L> <C-O>:noh<CR>
+" Map normal-mode key to clear highlight and redraw
+nnoremap \ :noh<CR>:redraw<CR>
 
-" Make \ in normal mode clear highlight
-nnoremap \ :noh<CR>
+" Map key to start NERDTree
+nnoremap <Leader>d :NERDTreeToggle<CR>
 
 " Map key to start bufexplorer
-nnoremap <leader>e :BufExplorer<cr>
+nnoremap <leader>x :BufExplorer<cr>
 
 " Map key to do CommandT TextMate-style finder
 nnoremap <leader>t :CommandT<CR>
@@ -61,8 +61,17 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Map key for quick save
+" Map arrow keys for quick window navigation
+map <M-Left> <C-w>h
+map <M-Down> <C-w>j
+map <M-Up> <C-w>k
+map <M-Right> <C-w>l
+
+" Map key for quick save (only works in gvim)
 nmap <C-s> :w<CR>
+
+" Map key to leave insert mode and save
+imap <C-s> <ESC>:w<CR>
 
 " Map key to change tabs
 nmap <Tab> gt
