@@ -5,6 +5,9 @@ vmap ; :
 " Use comma as <leader> key
 let mapleader = ","
 
+" Map double-leader to exit insert mode
+imap <Leader><Leader> <Esc>
+
 " Fix visual paste to not overwrite default register with deleted text
 vnoremap p "_dP
 
@@ -88,3 +91,7 @@ nmap SS <ESC>:mksession! ~/.vim/session.vim<CR>
 nmap SQ <ESC>:mksession! ~/.vim/session.vim<CR>:wqa<CR>
 " Map key for Session Restore
 nmap SR <ESC>:source ~/.vim/session.vim<CR>
+
+" Map key to open URL under cursor in chrome
+nnoremap <leader>w :silent !google-chrome <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
+

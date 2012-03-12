@@ -28,3 +28,5 @@ let g:user_zen_settings = { 'indentation' : ' ' }
 " Use c-k for zencoding to avoid clobbering c-y scrolling
 let g:user_zen_leader_key = '<c-k>'
 
+" Use XML structure for folding
+let g:xml_syntax_folding = 1

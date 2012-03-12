@@ -1,4 +1,6 @@
-" Jump to last cursor position when opening a file
+if !exists("autocommands_loaded")
+  let autocommands_loaded = 1
+
 " Dont do it when writing a commit log entry
 autocmd BufReadPost * call SetCursorPosition()
 function! SetCursorPosition()
@@ -25,19 +27,25 @@ endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Python smartindent settings
-autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+autocmd BufNewFile,BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 " Set LessCSS indentation (bundle/vim-less)
-autocmd BufNewFile,BufRead *.less set filetype=less softtabstop=4 tabstop=4 shiftwidth=4 expandtab
+autocmd BufNewFile,BufRead *.less setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 " Set HTML indentation
-autocmd BufRead *.html set softtabstop=1 tabstop=1 shiftwidth=1 expandtab
+autocmd BufNewFile,BufRead *.html setlocal softtabstop=1 tabstop=1 shiftwidth=1 expandtab
 
 " Set CoffeeScript indentation
-autocmd BufRead *.coffee set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
+autocmd BufNewFile,BufRead *.coffee setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 " Set Markdown indentation
-autocmd BufRead *.markdown set softtabstop=4 tabstop=4 shiftwidth=4 expandtab
+autocmd BufNewFile,BufRead *.markdown setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
+
+" Set Ruby indentation
+autocmd BufNewFile,BufRead *.rb setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
+
+" Set XML indentation
+autocmd BufNewFile,BufRead *.xml setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
 " Compile CoffeeScript on save (fails silently if coffee not found)
 autocmd BufWritePost,FileWritePost *.coffee :silent !coffee -c <afile>
@@ -47,3 +55,13 @@ autocmd BufWritePost,FileWritePost *.iced :silent !iced -I window -c <afile>
 
 " Compile LessCSS on save (fails silently if lessc not found)
 autocmd BufWritePost,FileWritePost *.less :silent !lessc <afile> <afile>:r.css
+
+" Use XML syntax folding
+autocmd FileType xml setlocal foldmethod=syntax
+
+" Set Vim indentation
+autocmd FileType vim setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
+
+endif
+
+" vim:sts=0:ts=2:sw=2
