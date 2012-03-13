@@ -26,10 +26,12 @@ set statusline+=%*
 set statusline+=%=
 
 " Syntax error status from Syntastic
-set statusline+=%{SyntasticStatuslineFlag()}\ 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " Git status from fugitive
-set statusline+=%{fugitive#statusline()}\ 
+set statusline+=%{fugitive#statusline()}\ "
 
 " Show cursor column
 set statusline+=%c,

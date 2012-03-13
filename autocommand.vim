@@ -42,7 +42,7 @@ autocmd BufNewFile,BufRead *.coffee setlocal softtabstop=4 tabstop=4 shiftwidth=
 autocmd BufNewFile,BufRead *.markdown setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 " Set Ruby indentation
-autocmd BufNewFile,BufRead *.rb setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
+autocmd BufNewFile,BufRead *.rb setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
 " Set XML indentation
 autocmd BufNewFile,BufRead *.xml setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
@@ -56,11 +56,11 @@ autocmd BufWritePost,FileWritePost *.iced :silent !iced -I window -c <afile>
 " Compile LessCSS on save (fails silently if lessc not found)
 autocmd BufWritePost,FileWritePost *.less :silent !lessc <afile> <afile>:r.css
 
-" Use XML syntax folding
-autocmd FileType xml setlocal foldmethod=syntax
-
 " Set Vim indentation
 autocmd FileType vim setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
+
+" Set Shell indentation
+autocmd FileType sh setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 endif
 

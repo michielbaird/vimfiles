@@ -30,3 +30,8 @@ let g:user_zen_leader_key = '<c-k>'
 
 " Use XML structure for folding
 let g:xml_syntax_folding = 1
+
+" Python mode settings
+let g:pymode_lint_checker = 'pyflakes'
+let g:pymode_lint_ignore = 'I'
+
