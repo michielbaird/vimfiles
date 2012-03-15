@@ -27,11 +27,11 @@ set statusline+=%=
 
 " Syntax error status from Syntastic
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
 set statusline+=%*
 
 " Git status from fugitive
-set statusline+=%{fugitive#statusline()}\ "
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}\ "
 
 " Show cursor column
 set statusline+=%c,
