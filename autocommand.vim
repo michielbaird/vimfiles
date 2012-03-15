@@ -26,26 +26,35 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-" Python smartindent settings
-autocmd BufNewFile,BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with softtabstop=4 tabstop=4 shiftwidth=4 expandtab
-
-" Set LessCSS indentation (bundle/vim-less)
-autocmd BufNewFile,BufRead *.less setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
-
-" Set HTML indentation
-autocmd BufNewFile,BufRead *.html setlocal softtabstop=1 tabstop=1 shiftwidth=1 expandtab
+" Set Apache indentation
+autocmd FileType apache setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 " Set CoffeeScript indentation
-autocmd BufNewFile,BufRead *.coffee setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
+autocmd FileType coffee setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
+
+" Set HTML indentation
+autocmd FileType html setlocal softtabstop=1 tabstop=1 shiftwidth=1 expandtab
+
+" Set LessCSS indentation (bundle/vim-less)
+autocmd FileType less setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 " Set Markdown indentation
-autocmd BufNewFile,BufRead *.markdown setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
+autocmd FileType markdown setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
+
+" Python smartindent settings
+autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 " Set Ruby indentation
-autocmd BufNewFile,BufRead *.rb setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
+autocmd FileType ruby setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
+
+" Set Shell indentation
+autocmd FileType sh setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
+
+" Set Vim indentation
+autocmd FileType vim setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
 " Set XML indentation
-autocmd BufNewFile,BufRead *.xml setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
+autocmd FileType xml setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
 
 " Compile CoffeeScript on save (fails silently if coffee not found)
 autocmd BufWritePost,FileWritePost *.coffee :silent !coffee -c <afile>
@@ -55,12 +64,6 @@ autocmd BufWritePost,FileWritePost *.iced :silent !iced -I window -c <afile>
 
 " Compile LessCSS on save (fails silently if lessc not found)
 autocmd BufWritePost,FileWritePost *.less :silent !lessc <afile> <afile>:r.css
-
-" Set Vim indentation
-autocmd FileType vim setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab
-
-" Set Shell indentation
-autocmd FileType sh setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 endif
 
