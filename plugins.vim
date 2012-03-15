@@ -32,6 +32,7 @@ let g:user_zen_leader_key = '<c-k>'
 let g:xml_syntax_folding = 1
 
 " Python mode settings
+let g:pymode_lint_checker = 'pylint'
 let g:pymode_lint_checker = 'pyflakes'
-let g:pymode_lint_ignore = 'I'
+let g:pymode_lint_ignore = 'I,E501,C0111'
 

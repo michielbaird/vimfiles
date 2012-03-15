@@ -33,7 +33,7 @@ autocmd FileType apache setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 autocmd FileType coffee setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 " Set HTML indentation
-autocmd FileType html setlocal softtabstop=1 tabstop=1 shiftwidth=1 expandtab
+autocmd FileType html setlocal softtabstop=1 tabstop=1 shiftwidth=1 expandtab |let syntastic_quiet_warnings=1
 
 " Set LessCSS indentation (bundle/vim-less)
 autocmd FileType less setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
