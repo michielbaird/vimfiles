@@ -24,6 +24,9 @@ nnoremap Y y$
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
 
+" Map Enter to break line and insert text
+nnoremap <CR> i<CR><Esc>|
+
 " Map key to toggle search highlighting
 nmap <silent> <leader>n :silent :set hlsearch!<CR>
 
@@ -69,11 +72,6 @@ map <M-Left> <C-w>h
 map <M-Down> <C-w>j
 map <M-Up> <C-w>k
 map <M-Right> <C-w>l
-
-" Map key for quick save from each mode (gvim-only)
-nmap <C-s> :w<CR>
-imap <C-s> <ESC>:w<CR>
-vmap <C-s> <ESC>:w<CR>
 
 " Map key to change tabs
 nmap <Tab> gt
