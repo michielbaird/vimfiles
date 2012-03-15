@@ -95,3 +95,19 @@ nmap SR <ESC>:source ~/.vim/session.vim<CR>
 " Map key to open URL under cursor in chrome
 nnoremap <leader>w :silent !google-chrome <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
 
+" :call Colemak() to swap keys for Colemak convenience
+function! Colemak()
+  " Don't use e in nerdtree, need it for lines upward Colemak
+  let g:NERDTreeMapOpenExpl = "x"
+
+  " Colemak swap j with n and k with e
+  noremap j n
+  noremap n j
+  noremap k e
+  noremap e k
+  noremap J N
+  noremap N J
+  noremap K E
+  noremap E K
+endfunction
+
