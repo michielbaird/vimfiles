@@ -89,6 +89,10 @@ set nofoldenable
 
 "Expand tabs to spaces (et)
 set expandtab
+" Defaults for sts,ts,sw as 4 spaces
+set softtabstop=4
+set tabstop=4
+set shiftwidth=4
 
 " Map keys
 runtime mappings.vim
