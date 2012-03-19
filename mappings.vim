@@ -70,6 +70,10 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <Leader>n :call NumberToggle()<CR>
+autocmd FocusLost * :set number
+autocmd FocusGained * :set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 
 " Map keys for quick window navigation
 map <C-h> <C-w>h
