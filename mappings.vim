@@ -61,6 +61,16 @@ nnoremap <leader>b :CommandTBuffer<CR>
 " Map key to use Gundo
 nnoremap <F4> :GundoToggle<CR>
 
+" Toggle relative numbers
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+nnoremap <Leader>n :call NumberToggle()<CR>
+
 " Map keys for quick window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
