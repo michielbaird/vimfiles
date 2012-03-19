@@ -29,11 +29,17 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " Set Apache indentation
 autocmd FileType apache setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
-" Set CoffeeScript indentation
+" Set CoffeeScript indentation (bundle/vim-coffee-script)
 autocmd FileType coffee setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 " Set HTML indentation
 autocmd FileType html setlocal softtabstop=1 tabstop=1 shiftwidth=1 expandtab |let syntastic_quiet_warnings=1
+
+" Set JSON to use JavaScript settings
+autocmd BufNewFile,BufRead *.json set filetype=javascript
+
+" Set JavaScript indentation
+autocmd FileType javascript setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 
 " Set LessCSS indentation (bundle/vim-less)
 autocmd FileType less setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab
