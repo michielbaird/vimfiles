@@ -56,7 +56,7 @@ nnoremap <leader>x :BufExplorer<cr>
 nnoremap <leader>t :CommandT<CR>
 
 " Map key to do CommandT buffer finder
-nnoremap <leader>b :CommandTBuffer<CR>
+nnoremap <leader>f :CommandTBuffer<CR>
 
 " Map key to use Gundo
 nnoremap <F4> :GundoToggle<CR>
