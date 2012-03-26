@@ -75,21 +75,22 @@ set showmatch
 " Show me when mode is insert, replace or visual (smd)
 set showmode
 
-" Don't format on paste (like paste on) (fo)
+" Don't reformat on paste (like paste on) (fo)
 set formatoptions=1
 
-" Fold based on indent (fdm)
+" By default fold based on indent (fdm)
 set foldmethod=indent
 
-" Deepest fold is 3 level (fdn)
-set foldnestmax=3
+" Only fold one level deep by default (fdn)
+set foldnestmax=1
 
-" Don't fold by default (nofen)
-set nofoldenable
+" Enable folding by default (fen)
+set foldenable
 
-"Expand tabs to spaces (et)
+" Expand tabs to spaces (et)
 set expandtab
-" Defaults for sts,ts,sw as 4 spaces
+
+" Do 4-space indent by default (sts,ts,sw)
 set softtabstop=4
 set tabstop=4
 set shiftwidth=4
