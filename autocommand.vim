@@ -51,7 +51,7 @@ autocmd FileType less setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab fo
 autocmd FileType markdown setlocal softtabstop=4 tabstop=4 shiftwidth=4 expandtab foldnestmax=1
 
 " Python smartindent settings
-autocmd FileType python setlocal autoindent cindent smartindent smarttab expandtab softtabstop=4 tabstop=4 shiftwidth=4 shiftround foldnestmax=1 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+autocmd FileType python setlocal autoindent cindent smartindent smarttab expandtab softtabstop=4 tabstop=4 shiftwidth=4 shiftround foldnestmax=2 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 
 " Set Ruby indentation
 autocmd FileType ruby setlocal autoindent softtabstop=2 tabstop=2 shiftwidth=2 expandtab foldnestmax=1
