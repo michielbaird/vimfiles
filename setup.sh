@@ -2,8 +2,6 @@
 
 ADIR="$(dirname $(readlink -f $BASH_SOURCE))"
 RDIR="${ADIR##$HOME/}"
-echo $ADIR
-echo $RDIR
 
 set -e
 set -u
@@ -22,15 +20,19 @@ if [[ ! -e pathogen ]]; then
 fi
 
 for vimlink in ~/.vim ~/.vimrc ~/.gvimrc; do
-    if [[ -e "$vimlink" ]] && [[ ! -L "$vimlink" ]]; then
-        echo "You have a $vimlink that isn't a symlink.  It will not be deleted.  Please take care of it."
-        exit 1
+    if [[ -L "$vimlink" ]]; then
+        rm -fv $vimlink
+    else
+        if [[ -d "$vimlink" ]]; then
+            rmdir --ignore-fail-on-non-empty "$vimlink"
+        fi
+        if [[ -e "$vimlink" ]]; then
+            echo "You have a $vimlink that isn't a symlink.  It will not be deleted.  Please take care of it."
+            exit 1
+        fi
     fi
 done
 
-rm -fv ~/.vim
-rm -fv ~/.vimrc
-rm -fv ~/.gvimrc
 ln -sv "$RDIR" ~/.vim
 ln -sv "$RDIR/vimrc" ~/.vimrc
 ln -sv "$RDIR/gvimrc" ~/.gvimrc
