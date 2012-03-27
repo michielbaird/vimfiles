@@ -55,3 +55,6 @@
 [submodule "bundle/SimpylFold"]
 	path = bundle/SimpylFold
 	url = http://github.com/tmhedberg/SimpylFold.git
+[submodule "bundle/nginx-vim-syntax"]
+	path = bundle/nginx-vim-syntax
+	url = https://github.com/andersjanmyr/nginx-vim-syntax
