@@ -107,6 +107,19 @@ nmap SR <ESC>:source ~/.vim/session.vim<CR>
 " Map key to open URL under cursor in chrome
 nnoremap <leader>w :silent !google-chrome <C-R>=escape("<C-R><C-F>", "#?&;\|%")<CR><CR>
 
+" Go to defn of tag under the cursor, forcing noignorecase
+fun! MatchCaseTag()
+    let ignorecase = &ignorecase
+    set noignorecase
+    try
+        execute 'tjump ' . expand('<cword>')
+    finally
+       let &ignorecase = ignorecase
+    endtry
+endfun
+nnoremap <silent> <C-]> :call MatchCaseTag()<CR>
+nnoremap <silent> <leader>c :!ctags -R . &<CR>
+
 " :call Colemak() to swap keys for Colemak convenience
 function! Colemak()
   " Don't use e in nerdtree, need it for lines upward Colemak
