@@ -19,20 +19,26 @@ if [[ ! -e pathogen ]]; then
     fi
 fi
 
-for vimlink in ~/.vim ~/.vimrc ~/.gvimrc; do
-    if [[ -L "$vimlink" ]]; then
-        rm -fv $vimlink
+declare -A DEST
+DEST['.vim']="$RDIR"
+DEST['.vimrc']='.vim/vimrc'
+DEST['.gvimrc']='.vim/gvimrc'
+
+# Work from HOME, very important
+cd ~
+
+for vimlink in "${!DEST[@]}"; do
+    destlink=${DEST["$vimlink"]}
+    if [[ -d "$vimlink" && ! -L "$vimlink" ]]; then
+        rmdir --ignore-fail-on-non-empty "$vimlink"
+    fi
+    if [[ ! -e "$vimlink" || -L "$vimlink" ]]; then
+        if [[ "$(readlink $vimlink)" != "$destlink" ]]; then
+            rm -f $vimlink
+            ln -sv "$destlink" "$vimlink"
+        fi
     else
-        if [[ -d "$vimlink" ]]; then
-            rmdir --ignore-fail-on-non-empty "$vimlink"
-        fi
-        if [[ -e "$vimlink" ]]; then
-            echo "You have a $vimlink that isn't a symlink.  It will not be deleted.  Please take care of it."
-            exit 1
-        fi
+        echo "You have a $vimlink that isn't a symlink.  It will not be deleted.  Please take care of it."
+        exit 1
     fi
 done
-
-ln -sv "$RDIR" ~/.vim
-ln -sv "$RDIR/vimrc" ~/.vimrc
-ln -sv "$RDIR/gvimrc" ~/.gvimrc
