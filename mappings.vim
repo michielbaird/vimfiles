@@ -21,14 +21,14 @@ noremap Q gq
 nnoremap Y y$
 
 " Make down/up behave as expected with lines of different length
-inoremap <Down> <C-o>gj
-inoremap <Up> <C-o>gk
+inoremap <Down> <C-o>g<Down>
+inoremap <Up> <C-o>g<Up>
 
 " Map Enter to break line and insert text
 nnoremap <CR> i<CR><Esc>|
 
 " Map key to toggle search highlighting
-nmap <silent> <leader>n :silent :set hlsearch!<CR>
+nmap <silent> <leader>h :silent :set hlsearch!<CR>
 
 " Map key to toggle showing whitespace characters
 nmap <silent> <leader>s :set nolist!<CR>
@@ -37,8 +37,8 @@ nmap <silent> <leader>s :set nolist!<CR>
 nmap <silent> <leader># :silent :set number!<CR>
 
 " Map keys to scroll viewport and take cursor with it
-nnoremap <C-e> 3<C-e>3j
-nnoremap <C-y> 3<C-y>3k
+nnoremap <C-e> 3<C-e>3<Down>
+nnoremap <C-y> 3<C-y>3<Up>
 
 " Make insert-mode key to clear highlight and redraw
 inoremap <C-l> <C-o>:noh<CR><C-o>:redraw<CR>
@@ -82,10 +82,10 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Map arrow keys for quick window navigation
-map <M-Left> <C-w>h
-map <M-Down> <C-w>j
-map <M-Up> <C-w>k
-map <M-Right> <C-w>l
+map <M-Left> <C-w><Left>
+map <M-Down> <C-w><Down>
+map <M-Up> <C-w><Up>
+map <M-Right> <C-w><Right>
 
 " Map key to change tabs
 nmap <Tab> gt
@@ -119,20 +119,3 @@ fun! MatchCaseTag()
 endfun
 nnoremap <silent> <C-]> :call MatchCaseTag()<CR>
 nnoremap <silent> <leader>c :!ctags -R . &<CR>
-
-" :call Colemak() to swap keys for Colemak convenience
-function! Colemak()
-  " Don't use e in nerdtree, need it for lines upward Colemak
-  let g:NERDTreeMapOpenExpl = "x"
-
-  " Colemak swap j with n and k with e
-  noremap j n
-  noremap n j
-  noremap k e
-  noremap e k
-  noremap J N
-  noremap N J
-  noremap K E
-  noremap E K
-endfunction
-
