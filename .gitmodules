@@ -46,9 +46,6 @@
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = http://github.com/groenewege/vim-less.git
-[submodule "bundle/pydoc.vim"]
-	path = bundle/pydoc.vim
-	url = http://github.com/fs111/pydoc.vim.git
 [submodule "bundle/vim-jade"]
 	path = bundle/vim-jade
 	url = http://github.com/digitaltoad/vim-jade.git
