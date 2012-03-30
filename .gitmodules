@@ -37,9 +37,6 @@
 [submodule "bundle/vim-preview"]
 	path = bundle/vim-preview
 	url = https://github.com/greyblake/vim-preview.git
-[submodule "bundle/vim-yankring"]
-	path = bundle/vim-yankring
-	url = http://github.com/chrismetcalf/vim-yankring.git
 [submodule "bundle/zencoding-vim"]
 	path = bundle/zencoding-vim
 	url = http://github.com/mattn/zencoding-vim.git
