@@ -78,14 +78,8 @@ set showmode
 " Don't reformat on paste (like paste on) (fo)
 set formatoptions=1
 
-" By default fold based on indent (fdm)
-set foldmethod=indent
-
 " Only fold one level deep by default (fdn)
 set foldnestmax=1
-
-" Enable folding by default (fen)
-set foldenable
 
 " Expand tabs to spaces (et)
 set expandtab
