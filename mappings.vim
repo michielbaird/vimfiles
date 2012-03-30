@@ -120,5 +120,6 @@ endfun
 nnoremap <silent> <C-]> :call MatchCaseTag()<CR>
 nnoremap <silent> <leader>c :!ctags -R . &<CR>
 
-" Map key to make vim convenient on Colemak
-nmap <leader>C :set langmap=jekn;eknj,JEKN;EKNJ
+" Map key to make vim convenient on Colemak (set lmap)
+nmap <leader>C :set langmap=jekn;eknj,JEKN;EKNJ<CR>
+nmap <leader>Q :set langmap=<CR>
