@@ -61,6 +61,11 @@ nnoremap <leader>f :CommandTBuffer<CR>
 " Map key to use Gundo
 nnoremap <F4> :GundoToggle<CR>
 
+" Map key to replace word under cursor
+nnoremap <leader>e :%s/\<<C-r><C-w>\>//gcI<Left><Left><Left><Left>
+" Map key to replace yanked text in selection
+vnoremap <leader>e :s/\<<C-r>"\>//gcI<Left><Left><Left><Left>
+
 " Toggle relative numbers
 function! NumberToggle()
   if(&relativenumber == 1)
