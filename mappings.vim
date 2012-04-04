@@ -1,6 +1,9 @@
 " Map semicolon to start command-line mode just like colon
-nmap ; :
-vmap ; :
+nnoremap ; :
+vnoremap ; :
+
+" Map apostrophe to repeate f/F/t/T since we took semicolon
+nnoremap ' ;
 
 " Use comma as <leader> key
 let mapleader = ","
@@ -24,8 +27,8 @@ nnoremap Y y$
 inoremap <Down> <C-o>g<Down>
 inoremap <Up> <C-o>g<Up>
 
-" Map Enter to break line and insert text
-nnoremap <CR> i<CR><Esc>|
+" Map return to break line after character
+nnoremap <CR> a<CR><Esc>
 
 " Map key to toggle search highlighting
 nmap <silent> <leader>h :silent :set hlsearch!<CR>
