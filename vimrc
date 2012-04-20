@@ -5,6 +5,7 @@ filetype off
 silent! call pathogen#infect()
 silent! call pathogen#helptags()
 filetype plugin indent on
+filetype plugin on
 
 " From http://items.sjbach.com/319/configuring-vim-right
 

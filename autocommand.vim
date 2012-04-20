@@ -65,6 +65,9 @@ autocmd FileType vim setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab fol
 " Set XML indentation
 autocmd FileType xml setlocal softtabstop=2 tabstop=2 shiftwidth=2 expandtab foldnestmax=3 foldmethod=marker
 
+" Python Completion
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
 " Compile CoffeeScript on save (fails silently if coffee not found)
 autocmd BufWritePost,FileWritePost *.coffee :silent !coffee -c <afile>
 

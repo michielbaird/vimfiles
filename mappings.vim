@@ -24,8 +24,8 @@ noremap Q gq
 nnoremap Y y$
 
 " Make down/up behave as expected with lines of different length
-inoremap <Down> <C-o>g<Down>
-inoremap <Up> <C-o>g<Up>
+" inoremap <Down> <C-o>g<Down>
+" inoremap <Up> <C-o>g<Up>
 
 " Map return to break line after character
 nnoremap <CR> a<CR><Esc>
@@ -131,3 +131,6 @@ nnoremap <silent> <leader>c :!ctags -R . &<CR>
 " Map key to make vim convenient on Colemak (set lmap)
 nmap <leader>C :set langmap=jekn;eknj,JEKN;EKNJ<CR>
 nmap <leader>Q :set langmap=<CR>
+
+" Map auto complete
+inoremap <Nul> <C-x><C-o>
