@@ -90,6 +90,9 @@ set softtabstop=4
 set tabstop=4
 set shiftwidth=4
 
+" Have mouse enabled by default
+set mouse=a
+
 " Map keys
 runtime mappings.vim
 
